@@ -56,10 +56,12 @@ class CalorieTracker{
     }
 
     reset() {
+
         this._totalCalories = 0;
         this._meals = [];
         this._workouts = [];
         Storage.clearDay();
+        this._calorieLimit = Storage.getCalorieLimit();
         this._render();
     }
 
@@ -176,6 +178,7 @@ class CalorieTracker{
         this._displayCaloriesBurned();
         this._displayCaloriesRemaining();
         this._displayCalorieProgress();
+        this._displayCaloriesLimit();
 
     }
 }
